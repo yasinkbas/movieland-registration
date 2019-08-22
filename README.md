@@ -10,4 +10,4 @@ $ python manage.py runserver
 ```
 
 ## If you want to deploy heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/yasinkbas/movie-rest-framework)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/yasinkbas/movieland-registration)
