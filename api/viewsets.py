@@ -8,14 +8,14 @@ from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
 from users.models import CustomUser
 from rest_framework import mixins
 
-from django_filters import rest_framework as filt #1
-class MovieFilter(filt.FilterSet): #2
+from django_filters import rest_framework as filt
+class MovieFilter(filt.FilterSet):
 
     class Meta:
         model = models.Movie
         fields = {
-            'title': ['icontains'], #3
-            'imdb': ['gte'], #4
+            'title': ['icontains'],
+            'imdb': ['gte'],
         }
 
 
@@ -23,7 +23,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = models.Movie.objects.all()
     serializer_class = serializers.MovieSerializer
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
     filterset_class = MovieFilter #5
 
     @action(methods=['get'], detail=False)  
