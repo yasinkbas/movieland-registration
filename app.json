@@ -1,0 +1,20 @@
+{
+  "name": "Movieland-registration",
+  "description": "Simple rest api project",
+  "keywords": [
+    "restframework",
+    "django",
+    "API",
+    "Python"
+  ],
+  "repository": "https://github.com/yasinkbas/movieland-registration",
+  "logo": "https://i.ibb.co/G9RQZwF/1-4-QDbb-e-O98w-IB32-CNNu-Wjw.png",
+  "success_url": "/welcome",
+  "env": {
+    "DISABLE_COLLECTSTATIC": {
+      "description": "A collectstatic disabled for this project",
+      "value": "1"
+    }
+  }
+
+}
