@@ -22,7 +22,5 @@ from django.contrib.auth.views import LoginView,LogoutView  # <-- LoginView ve L
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('token/', views.obtain_auth_token, name='token'),
-    path('login/', LoginView.as_view(), name="login"),  # LoginView urlimize eklendi
-    path('logout/', LogoutView.as_view(), name='logout'), # LogoutView urlimize eklendi
+    path('registration/',include('users.urls')),
 ]
