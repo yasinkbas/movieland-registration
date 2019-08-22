@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework.authentication import SessionAuthentication,TokenAuthentication
 from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly,AllowAny,IsAdminUser
-
+from users.models import CustomUser
+from rest_framework import mixins
 
 from django_filters import rest_framework as filt #1
 class MovieFilter(filt.FilterSet): #2
@@ -21,8 +22,8 @@ class MovieFilter(filt.FilterSet): #2
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = models.Movie.objects.all()
     serializer_class = serializers.MovieSerializer
-    authentication_classes = (SessionAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     filterset_class = MovieFilter #5
 
     @action(methods=['get'], detail=False)  
@@ -37,8 +38,15 @@ class MovieViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(newest)
         return Response(serializer.data)
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 class DirectorViewSet(viewsets.ModelViewSet):
     queryset = models.Director.objects.all()
     serializer_class = serializers.DirectorSerializer
-    authentication_classes = (SessionAuthentication,)
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticatedOrReadOnly,)
+
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = serializers.UserSerializer

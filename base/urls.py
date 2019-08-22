@@ -22,5 +22,5 @@ from django.contrib.auth.views import LoginView,LogoutView  # <-- LoginView ve L
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('registration/',include('users.urls')),
+    path('users/',include('users.urls')),
 ]
