@@ -17,7 +17,7 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /movies/ | `GET` | Empty | List all movies. |
 | /movies | `POST` | {'title':'foo', 'imdb':7.5, 'director':director_id, isPublish: true } | Create a new movie. |
 | /movies/:movie_id | `GET` | Empty | Get a movie. |
-| /movies/:movie_id | `PUT` | {'title':'foo', 'imdb':'bar','director':director_id, isPublish: true} | Update a movie with new info. |
+| /movies/:movie_id | `PUT` | {'title':'foo', 'imdb':7.5,'director':director_id, isPublish: true} | Update a movie with new info. |
 | /movies/:movie_id | `DELETE` | Empty | Delete a movie. |
 | /movies/newest/ | `GET` | Empty | Get the newest movie. |
 | /movies/published/ | `GET` | Empty | Get the newest movie. |
