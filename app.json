@@ -15,6 +15,7 @@
       "description": "The collectstatic disabled for this project",
       "value": "1"
     }
-  }
+  },
+  "success_url": "/welcome"
 
 }
