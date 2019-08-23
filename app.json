@@ -12,7 +12,7 @@
   "success_url": "/welcome",
   "env": {
     "DISABLE_COLLECTSTATIC": {
-      "description": "A collectstatic disabled for this project",
+      "description": "The collectstatic disabled for this project",
       "value": "1"
     }
   }

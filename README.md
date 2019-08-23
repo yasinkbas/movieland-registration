@@ -10,31 +10,31 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /login/ | `POST` | { username: 'foo', password:'1234' } | Generate a token. |
 | /logout/ | `POST` | Empty | Remove token |
 
-## Movies (Token)
+## Movies (Have to authenticated with Token)
 
 | Route | HTTP Verb	| POST body	| Description |
 | --- | --- | --- | --- |
 | /movies/ | `GET` | Empty | List all movies. |
 | /movies | `POST` | {'title':'foo', 'imdb':7.5, 'director':director_id, isPublish: true } | Create a new movie. |
-| /movies/:movie_id | `GET` | Empty | Get a movie. |
-| /movies/:movie_id | `PUT` | {'title':'foo', 'imdb':7.5,'director':director_id, isPublish: true} | Update a movie with new info. |
+| /movies/:movie_id | `GET` | Empty | Get the movie. |
+| /movies/:movie_id | `PUT` | {'title':'foo', 'imdb':7.5,'director':director_id, isPublish: true} | Update the movie with new info. |
 | /movies/:movie_id | `DELETE` | Empty | Delete a movie. |
 | /movies/newest/ | `GET` | Empty | Get the newest movie. |
 | /movies/published/ | `GET` | Empty | Get the published movies. |
 | /api/movies/?title__icontains=:[query_title] | `GET` | Empty | Get all result which ones include the query in title |
 | /api/movies/?imdb__gte=:[query_imdb] | `GET` | Empty | Get all result which ones greater than query imdb |
 
-## Directors (Token)
+## Directors (Have to authenticated with Token)
 
 | Route | HTTP Verb	 | POST body	 | Description	 |
 | --- | --- | --- | --- |
 | /directors/ | `GET` | Empty | List all directors. |
 | /directors/ | `POST` | { name: 'foo' } | Create a new director. | 
-| /directors/:director_id | `GET` | Empty | Get a director. |
-| /directors/:director_id | `PUT` | {'name':'foo'} | Update a director with new info. |
-| /directors/:director_id | `DELETE` | Empty | Delete a director. |
+| /directors/:director_id | `GET` | Empty | Get the director. |
+| /directors/:director_id | `PUT` | {'name':'foo'} | Update the director with new info. |
+| /directors/:director_id | `DELETE` | Empty | Delete the director. |
 
-## Users (Token)
+## Users (Have to authenticated with Token)
 
 | Route | HTTP Verb | POST body	 | Description	 |
 | --- | --- | --- | --- |
