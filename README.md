@@ -20,7 +20,7 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /movies/:movie_id | `PUT` | {'title':'foo', 'imdb':7.5,'director':director_id, isPublish: true} | Update a movie with new info. |
 | /movies/:movie_id | `DELETE` | Empty | Delete a movie. |
 | /movies/newest/ | `GET` | Empty | Get the newest movie. |
-| /movies/published/ | `GET` | Empty | Get the newest movie. |
+| /movies/published/ | `GET` | Empty | Get the published movies. |
 | /api/movies/?title__icontains=:[query_title] | `GET` | Empty | Get all result which ones include the query in title |
 | /api/movies/?imdb__gte=:[query_imdb] | `GET` | Empty | Get all result which ones greater than query imdb |
 
