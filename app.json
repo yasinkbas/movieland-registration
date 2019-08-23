@@ -8,7 +8,7 @@
     "Python"
   ],
   "repository": "https://github.com/yasinkbas/movieland-registration",
-  "logo": "https://i.ibb.co/G9RQZwF/1-4-QDbb-e-O98w-IB32-CNNu-Wjw.png",
+  "logo": "https://i.ibb.co/98sHswk/movielandd.jpg",
   "success_url": "/welcome",
   "env": {
     "DISABLE_COLLECTSTATIC": {

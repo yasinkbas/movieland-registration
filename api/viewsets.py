@@ -23,7 +23,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = models.Movie.objects.all()
     serializer_class = serializers.MovieSerializer
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     filterset_class = MovieFilter #5
 
     @action(methods=['get'], detail=False)  
@@ -39,6 +39,7 @@ class MovieViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def perform_create(self, serializer):
+        print(self.request.user)
         serializer.save(user=self.request.user)
 
 class DirectorViewSet(viewsets.ModelViewSet):
@@ -50,3 +51,5 @@ class DirectorViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = serializers.UserSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)

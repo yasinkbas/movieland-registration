@@ -20,7 +20,7 @@ from rest_framework.authtoken import views
 from django.contrib.auth.views import LoginView,LogoutView  # <-- LoginView ve LogoutView eklendi
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('users/',include('users.urls')),
+    # path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('auth/',include('users.urls')),
 ]
