@@ -10,7 +10,7 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /login/ | `POST` | { username: 'foo', password:'1234' } | Generate a token. |
 | /logout/ | `POST` | Empty | Remove token |
 
-## Movies (Have to authenticated with Token)
+## Movies (Must be authenticated with Token)
 
 | Route | HTTP Verb	| POST body	| Description |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /api/movies/?title__icontains=:[query_title] | `GET` | Empty | Get all result which ones include the query in title |
 | /api/movies/?imdb__gte=:[query_imdb] | `GET` | Empty | Get all result which ones greater than query imdb |
 
-## Directors (Have to authenticated with Token)
+## Directors (Must be authenticated with Token)
 
 | Route | HTTP Verb	 | POST body	 | Description	 |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 | /directors/:director_id | `PUT` | {'name':'foo'} | Update the director with new info. |
 | /directors/:director_id | `DELETE` | Empty | Delete the director. |
 
-## Users (Have to authenticated with Token)
+## Users (Must be authenticated with Token)
 
 | Route | HTTP Verb | POST body	 | Description	 |
 | --- | --- | --- | --- |
