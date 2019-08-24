@@ -6,9 +6,9 @@ This project uses Django2.2.4 | python 3.7 | rest_framework3.10
 
 | Route | HTTP Verb	 | POST body	 | Description	 |
 | --- | --- | --- | --- |
-| /register/ | `POST` | { username: 'foo', email: 'email@mail.com', password1:'1234' password2:'1234' } | Create a new user. Generate a token.|
-| /login/ | `POST` | { username: 'foo', password:'1234' } | Generate a token. |
-| /logout/ | `POST` | Empty | Remove token |
+| /auth/register/ | `POST` | { username: 'foo', email: 'email@mail.com', password1:'1234' password2:'1234' } | Create a new user. Generate a token.|
+| /auth/login/ | `POST` | { username: 'foo', password:'1234' } | Generate a token. |
+| /auth/logout/ | `POST` | Empty | Remove token |
 
 ## Movies (Must be authenticated with Token)
 
