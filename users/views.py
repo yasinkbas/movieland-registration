@@ -1,8 +1,11 @@
-from rest_framework import generics
+from rest_framework.views import APIView
+from api.serializers import UserSerializer
+from rest_framework.response import Response
 
-# from . import models
-# from api import serializers
-#
-# class UserListView(generics.ListCreateAPIView):
-#     queryset = models.CustomUser.objects.all()
-#     serializer_class = serializers.UserSerializer
+class CurrentUser(APIView):
+    def get(self,request):
+        context = {
+            'username':self.request.user.username ,
+             "email":self.request.user.email,
+                   }
+        return Response(context)

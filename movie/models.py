@@ -30,3 +30,6 @@ class Movie(models.Model):
 #
 #     def __str__(self):
 #         return self.name
+
+class CurrentUser(models.Model):
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)

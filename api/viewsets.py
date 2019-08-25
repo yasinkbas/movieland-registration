@@ -2,7 +2,7 @@ from movie import models
 from . import serializers
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework.authentication import SessionAuthentication,TokenAuthentication
 from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly,AllowAny,IsAdminUser
 from users.models import CustomUser
@@ -38,6 +38,7 @@ class MovieViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(newest)
         return Response(serializer.data)
 
+
     def perform_create(self, serializer):
         print(self.request.user)
         serializer.save(user=self.request.user)
@@ -53,3 +54,9 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.UserSerializer
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
+
+
+
+
+
+

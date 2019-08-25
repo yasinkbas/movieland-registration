@@ -20,6 +20,9 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    owner = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
     class Meta:
         model = CustomUser
-        fields = ('id','email', 'username')
+        fields = ('id','email', 'username','owner')
