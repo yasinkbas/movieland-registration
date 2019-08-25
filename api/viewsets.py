@@ -23,7 +23,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = models.Movie.objects.all()
     serializer_class = serializers.MovieSerializer
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
     filterset_class = MovieFilter #5
 
     @action(methods=['get'], detail=False)  
