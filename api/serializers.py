@@ -15,7 +15,7 @@ class DirectorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Director
-        fields = ('name',)
+        fields = ('name','image','summary')
 
 
 

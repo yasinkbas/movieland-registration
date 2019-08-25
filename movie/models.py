@@ -9,7 +9,7 @@ class Movie(models.Model):
     imdb = models.FloatField(validators=[MaxValueValidator(10.0),MinValueValidator(0.0)])
     isPublish = models.BooleanField(default=True)
     image = models.ImageField(default='default.jpg', upload_to=get_file_path, blank=True)
-    director = models.ForeignKey('movie.Director',on_delete=models.SET_NULL,blank=True,null=True)
+    director = models.ForeignKey('movie.Director',on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -27,6 +27,9 @@ class Movie(models.Model):
 
 class Director(models.Model):
     name = models.CharField(max_length=64)
+    image = models.ImageField(default='default.jpg', upload_to=get_file_path, blank=True)
+    bornYear = models.IntegerField(validators=[MaxValueValidator(2019),MinValueValidator(1800)])
+    summary = models.TextField()
 
     def __str__(self):
         return self.name
