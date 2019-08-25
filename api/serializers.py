@@ -8,14 +8,14 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = models.Movie
-        fields = ('id','title','imdb','image','isPublish','director','user')
+        fields = ('id','title','imdb','image','isPublish','director_name','user')
 
 
-class DirectorSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = models.Director
-        fields = ('name','image','summary')
+# class DirectorSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = models.Director
+#         fields = ('name','image','summary')
 
 
 

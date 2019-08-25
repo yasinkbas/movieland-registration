@@ -42,11 +42,11 @@ class MovieViewSet(viewsets.ModelViewSet):
         print(self.request.user)
         serializer.save(user=self.request.user)
 
-class DirectorViewSet(viewsets.ModelViewSet):
-    queryset = models.Director.objects.all()
-    serializer_class = serializers.DirectorSerializer
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+# class DirectorViewSet(viewsets.ModelViewSet):
+#     queryset = models.Director.objects.all()
+#     serializer_class = serializers.DirectorSerializer
+#     authentication_classes = (TokenAuthentication,)
+#     permission_classes = (IsAuthenticatedOrReadOnly,)
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CustomUser.objects.all()
