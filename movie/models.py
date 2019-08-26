@@ -8,7 +8,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=128)
     imdb = models.FloatField(validators=[MaxValueValidator(10.0),MinValueValidator(0.0)])
     isPublish = models.BooleanField(default=True)
-    image = models.ImageField(default='default.jpg', upload_to=get_file_path, blank=False)
+    image = models.ImageField(default='default.jpg', upload_to=get_file_path, blank=True,null=True)
     director_name = models.CharField(max_length=64)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
